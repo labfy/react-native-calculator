@@ -90,6 +90,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@types/mathjs": "^6.0.2",
     "mathjs": "^6.2.3"
   }
 }
