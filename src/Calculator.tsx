@@ -6,6 +6,8 @@ import {
   View,
   ViewStyle
 } from 'react-native'
+import {evaluate} from 'mathjs';
+
 import { Button } from './Button'
 import { Display } from './Display'
 import { CalculatorCommonProps, DefaultCommonProps } from './interface'
@@ -299,6 +301,18 @@ export class Calculator extends React.Component<CalculatorProps, State> {
         textStyle={{ color: numericButtonColor, fontSize }}
         text={value}
         onPress={() => {
+               // Value filter
+               let value_holder = value;          
+               if(value_holder === ','){             
+                   if(!!(/\d+(\,+)\d*$/.exec(this.state.text))) return;
+                   else if(!!(/[^\d]$/.exec(this.state.text))) value_holder='0,'; 
+               }
+               const textval = (this.state.text + value_holder).replace(/\./g, '').replace(/,/g,'.');  
+               
+               const totalval = evaluate(textval);
+   
+               if(totalval > 999999.99 || totalval < -999999.99 || totalval === Infinity) return;
+               
           if (this.calculated) {
             // clear answer replace with entered number
             this.calculated = false

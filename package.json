@@ -88,5 +88,8 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "dependencies": {
+    "mathjs": "^6.2.3"
   }
 }
