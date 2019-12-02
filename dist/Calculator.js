@@ -204,7 +204,7 @@ var Calculator = /** @class */ (function (_super) {
             }
             var textval = (_this.state.text + value_holder).replace(/\./g, '').replace(/,/g, '.');
             var totalval = mathjs_1.evaluate(textval);
-            if (totalval > 999999.99 || totalval < -999999.99 || totalval === Infinity)
+            if (totalval > 99999999.99 || totalval < -99999999.99 || totalval === Infinity)
                 return;
             if (_this.calculated) {
                 // clear answer replace with entered number

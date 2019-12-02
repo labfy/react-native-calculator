@@ -311,7 +311,7 @@ export class Calculator extends React.Component<CalculatorProps, State> {
                
                const totalval = evaluate(textval);
    
-               if(totalval > 999999.99 || totalval < -999999.99 || totalval === Infinity) return;
+               if(totalval > 99999999.99 || totalval < -99999999.99 || totalval === Infinity) return;
                
           if (this.calculated) {
             // clear answer replace with entered number
