@@ -93,6 +93,6 @@
   },
   "dependencies": {
     "@types/mathjs": "^6.0.2",
-    "mathjs": "^6.2.3"
+    "mathjs": "^7.5.1"
   }
 }
